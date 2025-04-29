@@ -2,6 +2,7 @@ package org.example.entity;
 
 import jakarta.persistence.*;
 import lombok.Data;
+import utill.DepartmentTypes;
 
 @Data
 @Entity
@@ -12,5 +13,6 @@ public class EmployeeEntity {
     private Long id;
     private String name;
     private String email;
-    private String department;
+    @Enumerated(EnumType.STRING)
+    private DepartmentTypes departmentTypes;
 }
