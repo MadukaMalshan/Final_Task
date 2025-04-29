@@ -1,6 +1,7 @@
 package org.example.dto;
 
 import lombok.*;
+import utill.DepartmentTypes;
 
 import java.time.LocalDateTime;
 
@@ -13,7 +14,7 @@ public class Employee {
     private Long id;
     private String name;
     private String email;
-    private String department;
+    private DepartmentTypes departmentTypes;
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
 }
