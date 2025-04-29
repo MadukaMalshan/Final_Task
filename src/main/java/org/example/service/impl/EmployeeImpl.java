@@ -45,36 +45,4 @@ public class EmployeeImpl implements EmployeeService {
     public void deleteEmployee(Long id) {
         employeeRepository.deleteById(id);
     }
-
-    @Override
-    public List<Employee> getEmployeesByName(String name) {
-        List<Employee> employees = new ArrayList<>();
-        List<EmployeeEntity> employeeEntities = employeeRepository.findByName(name);
-        employeeEntities.forEach(employeeEntity -> {
-            employees.add(modelMapper.map(employeeEntity, Employee.class));
-        });
-        return employees;
-    }
-
-    @Override
-    public List<Employee> getEmployeesByDepartment(String department) {
-        List<Employee> employees = new ArrayList<>();
-        List<EmployeeEntity> employeeEntities = employeeRepository.findByDepartment(department);
-        employeeEntities.forEach(employeeEntity -> {
-            employees.add(modelMapper.map(employeeEntity, Employee.class));
-        });
-        return employees;
-    }
-
-    @Override
-    public List<Employee> getEmployeesByEmail(String email) {
-        List<Employee> employees = new ArrayList<>();
-        List<EmployeeEntity> employeeEntities = employeeRepository.findByEmail(email);
-        employeeEntities.forEach(employeeEntity -> {
-            employees.add(modelMapper.map(employeeEntity, Employee.class));
-        });
-        return employees;
-    }
-    // This class is empty and serves as a placeholder for future implementation
-    // or as a base class for other service implementations.
 }

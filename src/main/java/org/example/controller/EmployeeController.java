@@ -39,18 +39,4 @@ public class EmployeeController {
     public void deleteEmployee(@PathVariable Long id) {
         employeeService.deleteEmployee(id);
     }
-
-    @GetMapping("/get-by-name/{name}")
-    public List<Employee> getEmployeesByName(@PathVariable String name) {
-        return employeeService.getEmployeesByName(name);
-    }
-
-    @DeleteMapping("/get-by-department/{department}")
-    public List<Employee> getEmployeesByDepartment(@PathVariable String department) {
-        return employeeService.getEmployeesByDepartment(department);
-    }
-
-    public List<Employee> getEmployeesByEmail(@PathVariable String email) {
-        return employeeService.getEmployeesByEmail(email);
-    }
 }
