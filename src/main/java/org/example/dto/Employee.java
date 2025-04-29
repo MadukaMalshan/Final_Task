@@ -2,6 +2,8 @@ package org.example.dto;
 
 import lombok.*;
 
+import java.time.LocalDateTime;
+
 @Data
 @Getter
 @Setter
@@ -12,5 +14,6 @@ public class Employee {
     private String name;
     private String email;
     private String department;
-
+    private LocalDateTime createdAt;
+    private LocalDateTime updatedAt;
 }
