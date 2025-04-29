@@ -25,8 +25,8 @@ public class EmployeeController {
     }
 
     @GetMapping("/get-by-id/{id}")
-    public void getEmployeeById(@PathVariable Long id) {
-        employeeService.getEmployeeById(id);
+    public Employee getEmployeeById(@PathVariable Long id) {
+        return employeeService.getEmployeeById(id);
     }
 
     @PutMapping("/update")
@@ -41,18 +41,16 @@ public class EmployeeController {
     }
 
     @GetMapping("/get-by-name/{name}")
-    public void getEmployeesByName(@PathVariable String name) {
-        employeeService.getEmployeesByName(name);
+    public List<Employee> getEmployeesByName(@PathVariable String name) {
+        return employeeService.getEmployeesByName(name);
     }
 
     @DeleteMapping("/get-by-department/{department}")
-    public void getEmployeesByDepartment(@PathVariable String department) {
-        employeeService.getEmployeesByDepartment(department);
-
+    public List<Employee> getEmployeesByDepartment(@PathVariable String department) {
+        return employeeService.getEmployeesByDepartment(department);
     }
 
-    public void getEmployeesByEmail(@PathVariable String email) {
-        employeeService.getEmployeesByEmail(email);
-
+    public List<Employee> getEmployeesByEmail(@PathVariable String email) {
+        return employeeService.getEmployeesByEmail(email);
     }
 }
